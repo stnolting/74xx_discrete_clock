@@ -62,7 +62,7 @@ Used logic chips:
 * [74HC4002](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT4002_Q100.pdf): Dual NOR4 gate
 * [74HC86](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT86.pdf): Quad XOR2 gate
 
-![counter_module](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/counter_module)
+![counter_module](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/counter_module.jpg)
 
 
 ### Clock Module
