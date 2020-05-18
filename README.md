@@ -9,8 +9,7 @@
 * [Introduction](#Introduction)
 * [General Architecture](#General-Architecture)
 * [Counter Module](#Counter-Module)
-* [Mother Board](#Mother-Board)
-* [Display Board](#Display-Board)
+* [Mother and Display Board](#Mother-and-Display-Board)
 * [Clock Module](#Clock-Module)
 * [Copyright](#Copyright)
 
@@ -20,6 +19,8 @@
 
 I have always been a fan of digital logic. I had a bunch of different 74xx TLL/CMOS ICs collecting dust in my shelves and I
 wanted to do something cool with them. A simple 4-bit CPU would be awesome, but a retro-style clock seems to be cool, too.
+
+
 
 Design principles:
 * clock with hours, minutes and seconds display, 24h format
@@ -74,36 +75,42 @@ Used logic chips:
 * [74HC4002](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT4002_Q100.pdf): Dual NOR4 gate
 * [74HC86](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT86.pdf): Quad XOR2 gate
 
-![counter_module](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/counter_module.jpg)
+![counter module](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/counter_module.jpg)
 
 ![after ages... all six counter_modules](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/counter_modules.jpg)
 
 
 
-## Mother Board
+## Mother and Display Board
 
-It includes the power supply (simple 7805) and the interconnection of the clock and counter modules.
-The output from the counter modules is fed forward to the display board.
+The clock module and the counter modules are plugged into the mother board. This board provides the power supply (based on a simple 7805) and
+takes care of the interconnection of all modules. The carry output of one counter module is connected to the carry input of the next one. Since the
+carry outs are low-active and the carry ins are high-active, an inverter (74HC04) is required between each stage.
 
-Schematic: **More to come**
+The outputs from the counter modules are brought to the display board. Each output pin as a pull-down resistor to prevent the display decoders from going
+crazy when a module is unplugged. Also, the carry out signals are terminated using pull-up resistors.
 
-Used logic chips:
-* [74HC04](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT04.pdf) Hex inverter
+As the name allready suggests, the display board carries the six 7-segment displays and the BCD-to-7-segment decoders (74HC4511). The latches of the decoders
+are always transparent. Also, the decoder's lamp test or output enable features are not used. There are two LEDs between the HRS and MIN displays
+and between the MIN and SEC display. These LEDs are driven (via a transistor on the mother board) by the main clock signal to give the clock a nice radio clock look.
 
 
+Schematic (mother board): [mother_board.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/mother_board.sch) [mother_board.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/mother_board.png)
 
-## Display Board
+Schematic (display board): [display_board.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/display_board.sch) [display_board.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/display_board.png)
 
-As the name allready suggests, the display board carries the six 7-segment displays and the BCD-to-7-segment decoders. The latches of the decoders
-are always transparent. I do not use the decoder's lamp test or pulse features.
+Used logic chips (mother board):
+* [74HC04](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT04.pdf): Hex inverter
 
-There are two LEDs between the HRS and MIN displays and between the MIN and SEC display. These LEDs are driven (via
-a transistor on the mother board) by the main clock signal to give the clock a nice radio clock look.
+Used logic chips (display board):
+* [74HC4511](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT4511.pdf): BCD to 7-segment decoder
 
-Schematic: **More to come**
 
-Used logic chips:
-* [74HC4511](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT4511.pdf) BCD to 7-segment decoder
+![mother/display board top](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/mother_board_top.jpg)
+
+![mother/display board bottom](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/mother_board_bottom.jpg)
+
+![mother/display board](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/mother_board.jpg)
 
 
 
