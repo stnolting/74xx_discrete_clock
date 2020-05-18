@@ -4,6 +4,18 @@
 [![issues](https://img.shields.io/github/issues/stnolting/74xx_discrete_clock)](https://github.com/stnolting/74xx_discrete_clock/issues)
 
 
+## Table of Content
+
+* [Introduction](#Introduction)
+* [General Architecture](#General-Architecture)
+* [Counter Module](#Counter-Module)
+* [Mother Board](#Mother-Board)
+* [Display Board](#Display-Board)
+* [Clock Module](#Clock-Module)
+* [Copyright](#Copyright)
+
+
+
 ## Introduction
 
 I have always been a fan of digital logic. I had a bunch of different 74xx TLL/CMOS ICs collecting dust in my shelves and I
@@ -26,7 +38,7 @@ See the project log on [hackaday.io](https://hackaday.io/project/171731-74xx-dis
 
 
 
-## Hardware Architecture
+## General Architecture
 
 The clock uses 4-bit binary counter ICs (74HC161) for counting hours, minutes and seconds, which are interconnected in a classic ripple-carry scheme.
 The output of the counters is decoded to drive classy 7-segment displays. There are 6 counter modules, which are plugged into a
@@ -36,7 +48,7 @@ generates the 1Hz base clock.
 
 
 
-### Counter Module
+## Counter Module
 
 The counter modules are the actual heart of the clock. There are six counter modules in total - one for each digit. 
 All these counter modules are identical (I will come back to this "issue"...). They are based on 74HC161 binary counter. The counting range is defined
@@ -64,19 +76,11 @@ Used logic chips:
 
 ![counter_module](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/counter_module.jpg)
 
-
-### Clock Module
-
-**More to come**
-
-Schematic: **More to come**
-
-Used logic chips:
-* **More to come**
+![after ages... all six counter_modules](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/counter_modules.jpg)
 
 
 
-### Mother Board
+## Mother Board
 
 It includes the power supply (simple 7805) and the interconnection of the clock and counter modules.
 The output from the counter modules is fed forward to the display board.
@@ -88,7 +92,7 @@ Used logic chips:
 
 
 
-### Display Board
+## Display Board
 
 As the name allready suggests, the display board carries the six 7-segment displays and the BCD-to-7-segment decoders. The latches of the decoders
 are always transparent. I do not use the decoder's lamp test or pulse features.
@@ -103,9 +107,20 @@ Used logic chips:
 
 
 
+## Clock Module
+
+**More to come**
+
+Schematic: **More to come**
+
+Used logic chips:
+* **More to come**
+
+
+
 ## Copyright
 
-This is a hobby project released under the BSD 3-Clause license.
+This is a hobby project released under the BSD 3-Clause license. No copyright infringement intended.
 
 Schematics made with EAGLE 9.6.0 free.
 
