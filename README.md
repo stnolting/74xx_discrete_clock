@@ -47,8 +47,8 @@ motherboard. This motherboard provides the power supply and interconnects the co
 the display board. The display board contains the decoders and the actual 7-segment displays. All modules are clocked by clock module, which
 generates the 1Hz base clock.
 
-Overview:
-* 6 "programmble" counter modules
+Hardware overview:
+* 6 "programmable" counter modules
 * 1 clock module to generate the 1Hz clock
 * 1 display board with 6 7-segment display
 * 1 mother board to connect everything
@@ -94,7 +94,7 @@ takes care of the interconnection of all modules. The carry output of one counte
 carry outs are low-active and the carry ins are high-active, an inverter (74HC04) is required between each stage.
 
 The outputs from the counter modules are brought to the display board. Each output pin as a pull-down resistor to prevent the display decoders from going
-crazy when a module is unplugged. Also, the carry out signals are terminated using pull-up resistors.
+crazy when a module is unplugged. Also, the carry out signals, the global clock and the global reset are terminated using pull-up/pull-down resistors, respectively
 
 As the name already suggests, the display board carries the six 7-segment displays and the BCD-to-7-segment decoders (74HC4511). The latches of the decoders
 are always transparent. Also, the decoder's lamp test or output enable features are not used. There are two LEDs between the HRS and MIN displays
