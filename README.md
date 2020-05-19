@@ -77,7 +77,7 @@ key debouncing, since the counter enable is only evaluated at a rising clock edg
 
 Clock and reset signals of the counter chip are driven by the global reset (!RST) and clock (CLK) signals.
 
-Schematic: [counter_module.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/counter_module.sch) [counter_module.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/counter_module.png)
+Schematic: [counter_module.pdf](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/counter_module.pdf) [counter_module.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/counter_module.sch) [counter_module.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/counter_module.png)
 
 Used logic chips:
 * [74HC161](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC161.pdf): 4-bit counter with synchronous parallel load
@@ -106,9 +106,9 @@ are always transparent. Also, the decoder's lamp test or output enable features 
 and between the MIN and SEC display. These LEDs are driven (via a transistor on the mother board) by the main clock signal to give the clock a nice radio clock look.
 
 
-Schematic (mother board): [mother_board.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/mother_board.sch) [mother_board.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/mother_board.png)
+Schematic (mother board): [mother_board.pdf](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/mother_board.pdf) [mother_board.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/mother_board.sch) [mother_board.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/mother_board.png)
 
-Schematic (display board): [display_board.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/display_board.sch) [display_board.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/display_board.png)
+Schematic (display board): [display_board.pdf](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/display_board.pdf) [display_board.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/display_board.sch) [display_board.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/display_board.png)
 
 Used logic chips (mother board):
 * [74HC04](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT04.pdf): Hex inverter
@@ -133,7 +133,7 @@ These times are defined by the capacitor (2x1µF Wima foil capacitors) and two p
 to measure the HIGH and LOW times so I can adjust the potentiometers to try to come as close as possible to 1Hz. Well, it worked - somehow.
 I fixed the potentiometers with some fancy nail polish. Of course the precision is not the best (e.g. thermal influence on the capacitors and resistors).
 
-Schematic: [clock_module.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/clock_module.sch) [clock_module.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/clock_module.png)
+Schematic: [clock_module.pdf](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/clock_module.pdf) [clock_module.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/clock_module.sch) [clock_module.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/clock_module.png)
 
 Used logic chips:
 * [NE555](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/ne555.pdf): The one and only keeper of time :sunglasses:
