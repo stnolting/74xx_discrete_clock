@@ -148,7 +148,9 @@ Used logic chips:
 
 ## Assembled Clock
 
-This what the assembled clock looks like:
+When assembled and powerde up, the clock draws ~95mA @ 7V (~70mA @ 6V).
+
+### Pictures
 
 ![rear view](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/final_rear.jpg)
 
