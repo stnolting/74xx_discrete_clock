@@ -12,6 +12,7 @@
 * [Counter Module](#Counter-Module)
 * [Mother and Display Board](#Mother-and-Display-Board)
 * [Clock Module](#Clock-Module)
+* [Assembled Clock](#Assembled-Clock)
 * [Copyright](#Copyright)
 
 
@@ -21,6 +22,7 @@
 I have always been a fan of digital logic. I had a bunch of different 74xx TLL/CMOS ICs collecting dust in my shelves and I
 wanted to do something cool with them. A simple 4-bit CPU would be awesome, but a retro-style clock seems to be cool, too.
 
+See the project log on [hackaday.io](https://hackaday.io/project/171731-74xx-discrete-clock).
 
 
 Design principles:
@@ -36,7 +38,7 @@ Design principles:
 * suitable as project for a rainy (or Corona-lockdowned) weekend
 * modular setup, so I can replace things if I mess something up
 
-See the project log on [hackaday.io](https://hackaday.io/project/171731-74xx-discrete-clock).
+![front view](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/final_front.jpg)
 
 
 
@@ -82,6 +84,8 @@ Used logic chips:
 * [74HC4002](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT4002_Q100.pdf): Dual NOR4 gate
 * [74HC86](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT86.pdf): Quad XOR2 gate
 
+### Pictures
+
 ![counter module](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/counter_module.jpg)
 
 ![after ages... all six counter_modules](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/counter_modules.jpg)
@@ -112,6 +116,7 @@ Used logic chips (mother board):
 Used logic chips (display board):
 * [74HC4511](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/74HC_HCT4511.pdf): BCD to 7-segment decoder
 
+### Pictures
 
 ![mother/display board top](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/mother_board_top.jpg)
 
@@ -125,19 +130,31 @@ Used logic chips (display board):
 
 I am using a straight forward circuit for the NE555 here, but with an additional diode to have identical HIGH and LOW times.
 These times are defined by the capacitor (2x1µF Wima foil capacitors) and two potentiometers. I wrote a simple program (for the NEO430​)
-to measure the HIGH and LOW times so can adjust the potentiometers to try to come as close as possible to 1Hz. Well, it worked - somehow.
-And I fixed the potentiometers with some fancy nail polish. Of course the precision is not the
-best (e.g. thermal influence on the capacitors and resistors).
+to measure the HIGH and LOW times so I can adjust the potentiometers to try to come as close as possible to 1Hz. Well, it worked - somehow.
+I fixed the potentiometers with some fancy nail polish. Of course the precision is not the best (e.g. thermal influence on the capacitors and resistors).
 
 Schematic: [clock_module.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/clock_module.sch) [clock_module.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/clock_module.png)
 
 Used logic chips:
 * [NE555](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/ne555.pdf): The one and only keeper of time :sunglasses:
 
+### Pictures
 
 ![clock module top](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/clock_module_top.jpg)
 
 ![clock module bottom](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/clock_module_bottom.jpg)
+
+
+
+## Assembled Clock
+
+This what the assembled clock looks like:
+
+![rear view](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/final_rear.jpg)
+
+![top view](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/final_top.jpg)
+
+![bird's view](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/final_sky.jpg)
 
 
 
