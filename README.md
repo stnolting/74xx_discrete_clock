@@ -51,7 +51,7 @@ generates the 1Hz base clock.
 Hardware overview:
 * 6 "programmable" counter modules
 * 1 clock module to generate the 1Hz clock
-* 1 display board with 6 7-segment display
+* 1 display board with 6 7-segment displays
 * 1 mother board to connect everything
 
 
@@ -123,12 +123,21 @@ Used logic chips (display board):
 
 ## Clock Module
 
-**More to come**
+I am using a straight forward circuit for the NE555 here, but with an additional diode to have identical HIGH and LOW times.
+These times are defined by the capacitor (2x1µF Wima foil capacitors) and two potentiometers. I wrote a simple program (for the NEO430​)
+to measure the HIGH and LOW times so can adjust the potentiometers to try to come as close as possible to 1Hz. Well, it worked - somehow.
+And I fixed the potentiometers with some fancy nail polish. Of course the precision is not the
+best (e.g. thermal influence on the capacitors and resistors).
 
-Schematic: **More to come**
+Schematic: [clock_module.sch](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/clock_module.sch) [clock_module.png](https://github.com/stnolting/74xx_discrete_clock/blob/master/schematic/clock_module.png)
 
 Used logic chips:
-* **More to come**
+* [NE555](https://github.com/stnolting/74xx_discrete_clock/blob/master/datasheets/ne555.pdf): The one and only keeper of time :sunglasses:
+
+
+![clock module top](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/clock_module_top.jpg)
+
+![clock module bottom](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/clock_module_bottom.jpg)
 
 
 
