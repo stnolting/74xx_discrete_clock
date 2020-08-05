@@ -13,6 +13,7 @@
 * [Mother and Display Board](#Mother-and-Display-Board)
 * [Clock Module](#Clock-Module)
 * [Assembled Clock](#Assembled-Clock)
+* [Accuracy and "Issues"](#Accuracy-and-Issues)
 * [Copyright](#Copyright)
 
 
@@ -148,7 +149,7 @@ Used logic chips:
 
 ## Assembled Clock
 
-When assembled and powerde up, the clock draws ~95mA @ 7V (~70mA @ 6V).
+When assembled and powered up, the clock draws ~95mA @ 7V (~70mA @ 6V).
 
 ### Pictures
 
@@ -157,6 +158,23 @@ When assembled and powerde up, the clock draws ~95mA @ 7V (~70mA @ 6V).
 ![top view](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/final_top.jpg)
 
 ![bird's view](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/final_sky.jpg)
+
+
+
+## Accuracy and "Issues"
+
+I've tried my best to _calibrate_ the NE555 to generate a 1 Hz clock. My oscilloscope was not precise enough for that, so I
+used a simple microcontroller setup based on the [NEO430](https://github.com/stnolting/neo430) to compare the NE555 clock
+against a Quartz-based reference clock. The deviation in _ms_ is printed via the processor's UART. After some fine tuning
+of the potentiometer I finally got a "good" 1 Hz clock from the NE555 and sealed the configuration with some nail polish.
+
+![calibration of the NE5555](https://github.com/stnolting/74xx_discrete_clock/blob/master/img/clock_calibration.jpg)
+
+**Accuracy**
+
+Well, it's obvious that the NE555 is not the most precise clock generator on the block. The actual frequency is impacted by the voltage fluctuations
+and especially by the temperature of the time-defining components. I tested the clock on a warm summer day and after 24 hours I got a deviation of approx.
++1800s or 30 minutes. Not good, not bad, but pretty moderate. So I think I will need to replace the NE555 by a more stable (Quartz) oscillator.
 
 
 
