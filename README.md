@@ -1,7 +1,6 @@
 # 74xx Discrete Clock
 
 [![license](https://img.shields.io/github/license/stnolting/74xx_discrete_clock)](https://github.com/stnolting/74xx_discrete_clock/blob/master/LICENSE)
-[![issues](https://img.shields.io/github/issues/stnolting/74xx_discrete_clock)](https://github.com/stnolting/74xx_discrete_clock/issues)
 
 
 ## Table of Content
